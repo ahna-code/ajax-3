@@ -19,14 +19,13 @@ $.ajax({
 function showCountriesList(resp) {
   countriesList.empty();
   resp.forEach(function(item) {
-    $('<li>').text(item.name).appendTo(countriesList);
-    $('<li>').text(item.capital).appendTo(countriesList);
-    $('<li>').text(item.area).appendTo(countriesList);
-    $('<li>').text(item.population).appendTo(countriesList);
-    $('<li>').text(item.languages).appendTo(countriesList);
-    
-  });
-}
 
-  
-  
+  $('<li>').text("Name: " + item.name).appendTo(countriesList);
+  $('<li>').text("Captial: " + item.capital).appendTo(countriesList);
+  $('<li>').text("Area (sq.km): " + item.area).appendTo(countriesList);
+  $('<li>').text("Population (mil): " + item.population).appendTo(countriesList);
+  $('<li>').text("Languages: " + item.languages).appendTo(countriesList);
+  $('<hr>').appendTo(countriesList);
+
+  });
+  }
